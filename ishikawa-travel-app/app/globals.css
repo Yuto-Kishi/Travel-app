@@ -1,21 +1,70 @@
+/* グローバルスタイル: パープル背景、白文字、黄緑ボタン */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* 背景とテキストカラー */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    @apply bg-purple-800 text-white;
+}
+
+
+/* ヘッダーやタイトル用のテキストスタイル */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply text-white;
+}
+
+
+/* 入力フォーム用スタイル */
+
+input[type="text"],
+input[type="password"] {
+    @apply bg-purple-700 text-white border-white rounded p-2 w-full;
+}
+
+
+/* ボタンスタイルを黄緑に設定 */
+
+button {
+    @apply bg-lime-400 text-white rounded p-2 w-full hover: bg-lime-500;
+}
+
+
+/* カードコンポーネント用の背景色とテキスト */
+
+.card {
+    @apply bg-purple-700 text-white rounded-lg shadow-lg;
+}
+
+
+/* スクロールバーの色調整 */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-lime-400 rounded;
+}
+
+
+/* フォームプレースホルダーカラー */
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+
+/* その他リンクやアクション要素 */
+
+a {
+    @apply text-lime-400 hover: text-lime-500;
 }
